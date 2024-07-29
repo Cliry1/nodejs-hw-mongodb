@@ -13,15 +13,13 @@ export const createContactSchema = Joi.object({
     'string.max': 'Phone number should have at most {#limit} characters',
     'any.required': 'Phone number is required',
   }),
-  email:Joi.string().min(3).max(20).required().messages({
+  email:Joi.string().min(3).max(20).messages({
     'string.base': 'Email should be a string', 
     'string.min': 'Email should have at least {#limit} characters',
     'string.max': 'Email should have at most {#limit} characters',
-    'any.required': 'Email is required',
   }),
-  isFavourite:Joi.boolean().required().messages({
+  isFavourite:Joi.boolean().messages({
     'boolean.base': 'Favourite should be a boolean',
-    'any.required': 'Favourite is required',
   }),
   contactType:Joi.string().valid("work","home","personal").required().messages({
     'string.base': 'Contact type should be a string', 
